@@ -49,7 +49,7 @@ public class Game {
         System.out.println("");
         System.out.println("Den første spiller som får 3000 i pengebeholdningen, vinder spillet!");
         System.out.println("");
-        System.out.println("Tryk på enter for at starte spillet");
+        System.out.println("Tryk på enter for at starte spillet, med første kast til " + p1.getPlayerName());
         pressEnter = scanner.nextLine();
         System.out.println("");
 
@@ -70,35 +70,44 @@ public class Game {
                     System.out.println("Sum: " + dice.getSum());
                     System.out.println("");
                     fields.field(dice.getSum());
-                    System.out.println(p1.getPlayerName() + " lander på felt nummer " + dice.getSum() + fields.getFieldName());
+                    System.out.println(p1.getPlayerName() + " lander altså på felt nummer " + dice.getSum() + fields.getFieldName());
                     System.out.println("");
                     System.out.println(fields.getComment());
+                    System.out.println("");
                     p1.addPlayerCoins(fields.getCoins());
-                    System.out.println(p1.getPlayerName() + " har nu " + p1.getPlayerCoins());
-
-                    System.out.println("tryk enter");
+                    System.out.println("Du har nu " + p1.getPlayerCoins());
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println(p2.getPlayerName() + " skal nu trykke på enter, for at kaste terningerne");
                     pressEnter = scanner.nextLine();
                     turn = 1;
                     break;
 
                 case 1:
                     if (p1.getPlayerCoins() >= 3000) {
-                        System.out.println(p1.getPlayerName() + " has won the game");
+                        System.out.println(p1.getPlayerName() + " har vundet spillet!");
+                        System.out.println("Tillykke :-)");
                         return;
                     }
 
                     dice.rollDice();
-                    System.out.println(p2.getPlayerName() + " rolled " + dice.firstDice() + " and " + dice.secondDice());
-                    System.out.println(p2.getPlayerName() + " now has " + dice.getSum());
+                    System.out.println(p2.getPlayerName() + " slår " + dice.firstDice() + " og " + dice.secondDice());
+                    System.out.println("Sum: " + dice.getSum());
+                    System.out.println("");
                     fields.field(dice.getSum());
-                    System.out.println(p2.getPlayerName() + " has landed on " + fields.getFieldName());
+                    System.out.println(p2.getPlayerName() + " lander altså på felt nummer " + dice.getSum() + fields.getFieldName());
+                    System.out.println("");
+                    System.out.println(fields.getComment());
+                    System.out.println("");
                     p2.addPlayerCoins(fields.getCoins());
-                    System.out.println(p2.getPlayerName() + " now has " + p2.getPlayerCoins());
-
+                    System.out.println("Du har nu " + p2.getPlayerCoins());
+                    System.out.println("");
+                    System.out.println("");
+                    System.out.println(p1.getPlayerName() + " skal nu trykke på enter, for at kaste terningerne");
+                    pressEnter = scanner.nextLine();
                     turn = 0;
-                    System.out.println("press enter");
-                    pressEnter = scanner.nextLine();;
                     break;
+
             }
         }
     }

@@ -13,57 +13,57 @@ public class Field {
             case 2 -> {
                 fieldName = ",  'Tower'";
                 coins = 250;
-                comment = "   sikke en udsigt! ...   ";
+                comment = "   -> sikke en udsigt! ...   ";
             }
             case 3 -> {
                 fieldName = ",  'Crater'";
                 coins = -100;
-                comment = "   op igen, op igen! ...   ";
+                comment = "   -> op igen, op igen! ...   ";
             }
             case 4 -> {
                 fieldName = ",  'Palace gates'";
                 coins = 100;
-                comment = "   Sesam, Sesam luk dig op! ...   ";
+                comment = "   -> Sesam, Sesam luk dig op! ...   ";
             }
             case 5 -> {
                 fieldName = ",  'Cold Desert'";
                 coins = -20;
-                comment = "   so cooold! ...   ";
+                comment = "   -> so cooold! ...   ";
             }
             case 6 -> {
                 fieldName = ",  'Walled city'";
                 coins = 180;
-                comment = "   nyd det!, du er i sikkerhed ...   ";
+                comment = "   -> nyd det!, du er i sikkerhed ...   ";
             }
             case 7 -> {
                 fieldName = ",  'Monastery'";
                 coins = 0;
-                comment = "   et kloster.   ";
+                comment = "   -> et kloster.   ";
             }
             case 8 -> {
                 fieldName = ",  'Black cave'";
                 coins = -70;
-                comment = "   ikke lige det hyggeligste sted ...   ";
+                comment = "   -> ikke lige det hyggeligste sted ...   ";
             }
             case 9 -> {
                 fieldName = ",  'Huts in the mountain'";
                 coins = 60;
-                comment = "   all nature ...   ";
+                comment = "   -> all nature ...   ";
             }
             case 10 -> {
                 fieldName = ",  'The Werewall'";
                 coins = -80;
-                comment = "   'You shall not pass!'   ";
+                comment = "   -> 'You shall not pass!'   ";
             }
             case 11 -> {
                 fieldName = ",  'The pit'";
                 coins = -50;
-                comment = "   daddy's home ...   ";
+                comment = "   -> daddy's home ...   ";
             }
             case 12 -> {
                 fieldName = ",  'Goldmine'";
                 coins = 650;
-                comment = "   Juhuu! Money in the bank!   ";
+                comment = "   -> Juhuu! Money in the bank!   ";
             }
         }
 
