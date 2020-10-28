@@ -6,63 +6,64 @@ public class Field {
 
     private String fieldName;
     private int coins;
+    private String comment;
 
     public void field(int diceSum) {
         switch (diceSum) {
             case 2 -> {
-                fieldName = "Tower";
+                fieldName = " altså: Tower";
                 coins = 250;
-                System.out.println("Sikke en udsigt!"); // tilføjet disse strings
+                comment = "   sikke en udsigt! ...   ";
             }
             case 3 -> {
-                fieldName = "Crater";
+                fieldName = " altså: Crater";
                 coins = -100;
-                System.out.println("Op igen, op igen!");
+                comment = "   op igen, op igen! ...   ";
             }
             case 4 -> {
-                fieldName = "Palace gates";
+                fieldName = " altså: Palace gates";
                 coins = 100;
-                System.out.println("Sesam, Sesam luk dig op!");
+                comment = "   Sesam, Sesam luk dig op! ...   ";
             }
             case 5 -> {
-                fieldName = "Cold Desert";
+                fieldName = " altså: Cold Desert";
                 coins = -20;
-                System.out.println("So cooold!");
+                comment = "   so cooold! ...   ";
             }
             case 6 -> {
-                fieldName = "Walled city";
+                fieldName = " altså: Walled city";
                 coins = 180;
-                System.out.println("Nyd det!, du er i sikkerhed");
+                comment = "   nyd det!, du er i sikkerhed ...   ";
             }
             case 7 -> {
-                fieldName = "Monastery";
+                fieldName = " altså: Monastery";
                 coins = 0;
-                System.out.println("Et kloster.");
+                comment = "   et kloster.   ";
             }
             case 8 -> {
-                fieldName = "Black cave";
+                fieldName = " altså: Black cave";
                 coins = -70;
-                System.out.println("Ikke lige det hyggeliste sted!");
+                comment = "   ikke lige det hyggeligste sted ...   ";
             }
             case 9 -> {
-                fieldName = "Huts in the mountain";
+                fieldName = " altså: Huts in the mountain";
                 coins = 60;
-                System.out.println("All Nature!");
+                comment = "   all nature ...   ";
             }
             case 10 -> {
-                fieldName = "The Werewall";
+                fieldName = " altså: The Werewall";
                 coins = -80;
-                System.out.println(" 'You Shall Not Pass!' ");
+                comment = "   'You shall not pass!'   ";
             }
             case 11 -> {
-                fieldName = "The pit";
+                fieldName = " altså: The pit";
                 coins = -50;
-                System.out.println(" 'Daddy's home...' ");
+                comment = "   daddy's home ...   ";
             }
             case 12 -> {
-                fieldName = "Goldmine";
+                fieldName = " altså: Goldmine";
                 coins = 650;
-                System.out.println(" 'Money in the Bank!' ");
+                comment = "   Juhuu! Money in the bank!   ";
             }
         }
 
@@ -75,4 +76,6 @@ public class Field {
     public int getCoins() {
         return coins;
     }
+
+    public String getComment() { return comment; }
 }
