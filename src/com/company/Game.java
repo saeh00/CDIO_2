@@ -69,10 +69,10 @@ public class Game {
                     System.out.println(p1.getPlayerName() + " slår " + dice.firstDice() + " og " + dice.secondDice());
                     System.out.println("Sum: " + dice.getSum());
                     System.out.println("");
-                    System.out.println(p1.getPlayerName() + " lander altså på felt nummer " + dice.getSum());
                     fields.field(dice.getSum());
-                    System.out.println("         " + fields.getFieldName());
+                    System.out.println(p1.getPlayerName() + " lander på felt nummer " + dice.getSum() + fields.getFieldName());
                     System.out.println("");
+                    System.out.println(fields.getComment());
                     p1.addPlayerCoins(fields.getCoins());
                     System.out.println(p1.getPlayerName() + " har nu " + p1.getPlayerCoins());
 
