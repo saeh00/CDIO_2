@@ -3,9 +3,7 @@ package com.company;
 public class Player {
 
     private final String playerName;
-    /*
-        private final int[] playerDice = new int[2];
-    */
+
     private int playerCoins = 1000;
 
     public Player(String name){
@@ -15,11 +13,7 @@ public class Player {
     public String getPlayerName() {
         return playerName;
     }
-    /*
-        public int[] getPlayerDice() {
-            return playerDice;
-        }
-    */
+
     public int getPlayerCoins() {
         return playerCoins;
     }
