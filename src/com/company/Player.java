@@ -26,6 +26,8 @@ public class Player {
 
     public void addPlayerCoins(int playerPoints) {
         this.playerCoins += playerPoints;
+        if (playerCoins < 0) {
+            playerCoins = 0;
+        }
     }
-
 }
