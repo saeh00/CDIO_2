@@ -151,7 +151,158 @@ public class Language {
 
         }
     }
+
+    public void runGame(int languageNumber) {
+        Player p1 = new Player(getP1Name());
+        Player p2 = new Player(getP2Name());
+        int turn = 0;
+        if (languageNumber == 1) {
+            while (p1.getPlayerCoins() < 3000 || p2.getPlayerCoins() < 3000) {
+                switch (turn) {
+                    case 1:
+                        if (p2.getPlayerCoins() >= 3000) {
+                            gameWonP2Language(2);
+                            return;
+                        }
+
+                        System.out.println(p1.getPlayerName() + " skal nu trykke på enter, for at kaste terningerne");
+                        pressEnter = scanner.nextLine();
+
+                        dice.rollDice();
+                        System.out.println(p1.getPlayerName() + " slår " + dice.firstDice() + " og " + dice.secondDice());
+                        System.out.println("Sum: " + dice.getSum());
+                        System.out.println("");
+                        fields.field(dice.getSum());
+                        if (fields.getFieldName().equals(",  'The Werewall'")) {
+                            turn = 0;
+                            System.out.println(p1.getPlayerName() + " lander altså på felt nummer " + dice.getSum()
+                                    + fields.getFieldName() + " og får " + fields.getCoins() + " mønter" + " men en ekstra tur ;)");
+                        } else {
+                            turn = 1;
+                            System.out.println(p1.getPlayerName() + " lander altså på felt nummer " + dice.getSum()
+                                    + fields.getFieldName() + " og får " + fields.getCoins() + " mønter");
+                        }
+                        System.out.println("");
+                        System.out.println(fields.getComment());
+                        System.out.println("");
+                        p1.addPlayerCoins(fields.getCoins());
+                        System.out.println("Du har nu " + p1.getPlayerCoins());
+                        System.out.println("");
+                        System.out.println("");
+
+                        break;
+                    case 2:
+                        if (p1.getPlayerCoins() >= 3000) {
+                            gameWonP2Language(2);
+                            return;
+                        }
+
+                        System.out.println(p2.getPlayerName() + " skal nu trykke på enter, for at kaste terningerne");
+                        pressEnter = scanner.nextLine();
+
+                        dice.rollDice();
+                        System.out.println(p2.getPlayerName() + " slår " + dice.firstDice() + " og " + dice.secondDice());
+                        System.out.println("Sum: " + dice.getSum());
+                        System.out.println("");
+                        fields.field(dice.getSum());
+                        if (fields.getFieldName().equals(",  'The Werewall'")) {
+                            turn = 0;
+                            System.out.println(p2.getPlayerName() + " lander altså på felt nummer " + dice.getSum()
+                                    + fields.getFieldName() + " og får " + fields.getCoins() + " mønter" + " men en ekstra tur ;)");
+                        } else {
+                            turn = 1;
+                            System.out.println(p2.getPlayerName() + " lander altså på felt nummer " + dice.getSum()
+                                    + fields.getFieldName() + " og får " + fields.getCoins() + " mønter");
+                        }
+                        System.out.println("");
+                        System.out.println(fields.getComment());
+                        System.out.println("");
+                        p2.addPlayerCoins(fields.getCoins());
+                        System.out.println("Du har nu " + p2.getPlayerCoins());
+                        System.out.println("");
+                        System.out.println("");
+                }
+                break;
+            }
+        } else if (languageNumber == 2) {
+            while (p1.getPlayerCoins() < 3000 || p2.getPlayerCoins() < 3000) {
+
+                switch (turn) {
+                    case 0:
+                        if (p2.getPlayerCoins() >= 3000) {
+                            gameWonP2Language(2);
+                            return;
+                        }
+                        System.out.println(p1.getPlayerName() + " please press enter to through the dice");
+                        pressEnter = scanner.nextLine();
+
+                        dice.rollDice();
+                        System.out.println(p1.getPlayerName() + " threw a " + dice.firstDice() + " and a " + dice.secondDice());
+                        System.out.println("Sum: " + dice.getSum());
+                        System.out.println("");
+                        fields.field(dice.getSum());
+                        if (fields.getFieldName().equals(",  'The Werewall'")) {
+                            turn = 1;
+                            System.out.println(p1.getPlayerName() + " lands on field number " + dice.getSum()
+                                    + fields.getFieldName() + " and gets " + fields.getCoins() + " coins" + " but also an extra turn ;)");
+                        } else {
+                            turn = 0;
+                            System.out.println(p1.getPlayerName() + " lands on field number " + dice.getSum()
+                                    + fields.getFieldName() + " and gets " + fields.getCoins() + " coins");
+                        }
+                        System.out.println("");
+                        System.out.println(fields.getComment());
+                        System.out.println("");
+                        p1.addPlayerCoins(fields.getCoins());
+                        System.out.println("You now have " + p1.getPlayerCoins());
+                        System.out.println("");
+                        System.out.println("");
+
+                        break;
+                    case 1:
+
+                        if (p1.getPlayerCoins() >= 3000) {
+                            gameWonP2Language(2);
+                            return;
+                        }
+                        System.out.println(p2.getPlayerName() + " please press enter to through the dice");
+                        pressEnter = scanner.nextLine();
+
+                        dice.rollDice();
+                        System.out.println(p2.getPlayerName() + " threw a " + dice.firstDice() + " and a " + dice.secondDice());
+                        System.out.println("Sum: " + dice.getSum());
+                        System.out.println("");
+                        fields.field(dice.getSum());
+                        if (fields.getFieldName().equals(",  'The Werewall'")) {
+                            turn = 1;
+                            System.out.println(p2.getPlayerName() + " lands on field number " + dice.getSum()
+                                    + fields.getFieldName() + " and gets " + fields.getCoins() + " coins" + " but also an extra turn ;)");
+                        } else {
+                            turn = 0;
+                            System.out.println(p2.getPlayerName() + " lands on field number " + dice.getSum()
+                                    + fields.getFieldName() + " og gets " + fields.getCoins() + " coins");
+                        }
+                        System.out.println("");
+                        System.out.println(fields.getComment());
+                        System.out.println("");
+                        p2.addPlayerCoins(fields.getCoins());
+                        System.out.println("You now have " + p2.getPlayerCoins());
+                        System.out.println("");
+                        System.out.println("");
+                }
+                break;
+            }
+        }
+    }
 }
+
+
+
+
+
+
+
+
 /*
     public void gameDansk() {
         Player p1 = new Player(getP1Name());

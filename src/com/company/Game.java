@@ -17,12 +17,15 @@ public class Game {
 
         int languageNumber = scanner.nextInt();
 
-        if (languageNumber == 1) {
-            language.rulesLanguage(1);
-        } else if (languageNumber == 2) {
-            language.rulesLanguage(2);
-        } else {
-            System.out.println("Error no language chosen");
+        while (languageNumber != 1 || languageNumber != 2) {
+            if (languageNumber == 1) {
+                language.rulesLanguage(1);
+            } else if (languageNumber == 2) {
+                language.rulesLanguage(2);
+            } else {
+                System.out.println("Error no language chosen, try again");
+                languageNumber = scanner.nextInt();
+            }
         }
 
         Player p1 = new Player(language.getP1Name());
