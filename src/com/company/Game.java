@@ -20,8 +20,10 @@ public class Game {
         while (languageNumber != 1 || languageNumber != 2) {
             if (languageNumber == 1) {
                 language.rulesLanguage(1);
+                break;
             } else if (languageNumber == 2) {
                 language.rulesLanguage(2);
+                break;
             } else {
                 System.out.println("Error no language chosen, try again");
                 languageNumber = scanner.nextInt();
